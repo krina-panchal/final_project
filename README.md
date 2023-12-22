@@ -1,6 +1,7 @@
 Apprenticeship and UCAS Application Data Analysis Project
 
 Overview:
+
 This repository contains the final project that analyses apprenticeship and UCAS (Universities and Colleges Admissions Service) application data. The primary focus of the analysis is to explore the impact of ethnicity as a key variable in determining career pathway choices among different ethnic groups.
 
 Project Contents:
