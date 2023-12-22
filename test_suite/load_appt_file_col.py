@@ -12,7 +12,7 @@ def load_appt_data(file_path):
     """
     try:
         # Load 'appt_data' file using pandas
-        appt_data = pd.read_csv(r"C:\Users\krina\OneDrive - Queen Mary, University of London\Desktop\Year2\DAT5902\final_project\test_suite\attp_data.xlsx")  # Update parameters if your file format is different
+        appt_data = pd.read_excel(r"C:\Users\krina\OneDrive - Queen Mary, University of London\Desktop\Year2\DAT5902\final_project\test_suite\attp_data.xlsx")  # Update parameters if your file format is different
 
         # Check if the loaded DataFrame has exactly 8 columns
         if appt_data.shape[1] == 8:
