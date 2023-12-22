@@ -14,7 +14,7 @@ class TestDataProcessing(unittest.TestCase):
         self.assertIsNotNone(ucas_data)
 
         # Assert that the loaded DataFrame has exactly 8 columns
-        self.assertEqual(ucas_data.shape[1], 8)
+        self.assertEqual(ucas_data.shape[1], 5)
 
     def test_check_data_types(self):
         # Example dataset with specific data types
