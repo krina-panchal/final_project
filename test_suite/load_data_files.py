@@ -41,6 +41,6 @@ def main():
         print("ucas_data loaded successfully:")
         print(df2.head())
 
-
 if __name__ == "__main__":
     main()
+
