@@ -25,7 +25,7 @@ class TestLoadExcelData(unittest.TestCase):
 
     def test_load_appt_data_sheet(self):
         """
-        Test loading the 'appt_data' sheet from the Excel file and assert that the data is not empty.
+        Test loading the 'ucas_data' sheet from the Excel file and assert that the data is not empty.
         """
         # Define the path to the Excel file
         file_path = r"C:\Users\krina\OneDrive - Queen Mary, University of London\Desktop\Year2\DAT5902\final_project\test_suite\ucas_data.xlsx"
