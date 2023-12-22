@@ -8,7 +8,6 @@ from load_data_files import load_excel_data
 
 class TestLoadExcelData(unittest.TestCase):
 
-
     def test_load_excel_file(self):
         """
         Test loading the entire Excel file and assert that the data is not empty.
