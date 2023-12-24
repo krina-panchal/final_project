@@ -39,4 +39,12 @@ workflows:
               only:
                 - test_suite_dev
 
+  visualisations:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only:
+                - visualisations
+
 
