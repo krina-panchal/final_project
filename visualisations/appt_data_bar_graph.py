@@ -14,7 +14,7 @@ appt_data = pd.read_excel(r"C:\Users\krina\OneDrive - Queen Mary, University of 
 plt.figure(figsize=(18, 8))
 
 # Use Seaborn to create a count plot
-sns.countplot(x='Ethnicity Group', data=appt_data, hue='Gender', palette={'Male': 'lightblue', 'Female': 'pink'})
+sns.countplot(x='Ethnic Group', data=appt_data, hue='Gender', palette={'Male': 'lightblue', 'Female': 'pink'})
 
 # Customising the plot labels and title
 plt.xlabel('Ethnicity Group')
