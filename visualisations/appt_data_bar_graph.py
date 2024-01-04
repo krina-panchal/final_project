@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 appt_data = pd.read_excel(r"C:\Users\krina\OneDrive - Queen Mary, University of London\Desktop\Year2\DAT5902\final_project\visualisations\attp_data.xlsx")
 
 # Data Visualisation
-
 # Bar chart of the count of applicants by Ethnicity Group
 plt.figure(figsize=(20, 10))
 
@@ -15,18 +14,21 @@ plt.figure(figsize=(20, 10))
 genders = appt_data['Gender'].unique()
 
 # Creating bars for each gender
-bar_width = 0.25  # Adjust this value as needed
+bar_width = 0.35 
 for i, gender in enumerate(genders):
     gender_data = appt_data[appt_data['Gender'] == gender]
     ethnic_group_counts = gender_data['Ethnic Group'].value_counts()
     
+    # Sort ethnic groups alphabetically
+    ethnic_group_counts = ethnic_group_counts.sort_index()
+
     # Plotting each bar
     plt.bar(
         x=range(len(ethnic_group_counts)) if i == 0 else [pos + bar_width for pos in range(len(ethnic_group_counts))],
         height=ethnic_group_counts,
         width=bar_width,
         label=gender,
-        color='lightblue' if gender == 'Male' else 'pink'
+        color='lightgreen' if gender == 'Male' else 'lightpink'
     )
 
 # Customising the plot labels and title
