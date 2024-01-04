@@ -33,7 +33,10 @@ def load_ucas_bargraph():
     plt.xlabel('Ethnic Group')
     plt.ylabel('Number of Applications')
     plt.title('Comparison of UCAS Applications by Ethnic Group (June Deadlines, 2019-2020)')
-    plt.xticks([x + bar_width / 2 for x in x_values], pivot_data['Ethnic Group'])  # Adjust x-axis tick positions
+    
+    # Set explicit x-axis tick labels
+    plt.xticks(x_values, pivot_data['Ethnic Group'])
+
     plt.legend(title='Year')
 
     plt.show()
