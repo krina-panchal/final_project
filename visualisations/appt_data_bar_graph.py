@@ -15,7 +15,7 @@ plt.figure(figsize=(20, 10))
 genders = appt_data['Gender'].unique()
 
 # Creating bars for each gender
-bar_width = 0.35  # Adjust this value as needed
+bar_width = 0.25  # Adjust this value as needed
 for i, gender in enumerate(genders):
     gender_data = appt_data[appt_data['Gender'] == gender]
     ethnic_group_counts = gender_data['Ethnic Group'].value_counts()
