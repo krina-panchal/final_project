@@ -11,7 +11,7 @@ appt_data = pd.read_excel(r"C:\Users\krina\OneDrive - Queen Mary, University of 
 
 #Bar chart of the count of applicants by Ethnicity Group
 # Creating a new figure with a specified size
-plt.figure(figsize=(18, 8))
+plt.figure(figsize=(20, 10))
 
 # Use Seaborn to create a count plot
 sns.countplot(x='Ethnic Group', data=appt_data, hue='Gender', palette={'Male': 'lightblue', 'Female': 'pink'})
