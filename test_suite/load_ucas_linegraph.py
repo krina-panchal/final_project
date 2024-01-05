@@ -1,24 +1,29 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def load_and_plot_ucas_data(file_path):
-    ucas_ungrad = pd.read_csv(file_path)
-    ucas_ungrad['Time'] = ucas_ungrad['Time'].str.extract('(\d{4}/\d{2})', expand=False)
-    filtered_data = ucas_ungrad.dropna(subset=['Percentage'])
+# Assuming your data is loaded into a DataFrame named ucas_ungrad
+# If not, load your data using pd.read_csv('ucas_ungrad.csv')
+ucas_ungrad = pd.read_csv(r"C:\Users\krina\OneDrive - Queen Mary, University of London\Desktop\Year2\DAT5902\final_project\visualisations\ucas_ungrad.csv")
+# Data cleansing
+ucas_ungrad['Time'] = ucas_ungrad['Time'].str.extract('(\d{4}/\d{2})', expand=False)
 
-    fig, ax = plt.subplots(figsize=(12, 8))
+# Filter out rows with missing values
+filtered_data = ucas_ungrad.dropna(subset=['Percentage'])
 
-    for ethnicity in filtered_data['Ethnicity'].unique():
-        ethnicity_data = filtered_data[filtered_data['Ethnicity'] == ethnicity]
-        ax.plot(ethnicity_data['Time'], ethnicity_data['Percentage'], label=ethnicity, marker='o')
+# Create a line graph
+fig, ax = plt.subplots(figsize=(12, 8))
 
-    ax.set_title('Percentage of First-Year Enrolments by Ethnicity Over Time')
-    ax.set_xlabel('Year')
-    ax.set_ylabel('Percentage')
-    ax.legend(title='Ethnicity', bbox_to_anchor=(1.05, 1), loc='upper left')
+# Iterate over unique ethnicities and plot a line for each
+for ethnicity in filtered_data['Ethnicity'].unique():
+    ethnicity_data = filtered_data[filtered_data['Ethnicity'] == ethnicity]
+    ax.plot(ethnicity_data['Time'], ethnicity_data['Percentage'], label=ethnicity, marker='o')
 
-    plt.tight_layout()
-    plt.show()
+# Customize the plot
+ax.set_title('Percentage of First-Year Enrolments by Ethnicity Over Time')
+ax.set_xlabel('Year')
+ax.set_ylabel('Percentage')
+ax.legend(title='Ethnicity', bbox_to_anchor=(1.05, 1), loc='upper left')
 
-
-load_and_plot_ucas_data(r"C:\Users\krina\OneDrive - Queen Mary, University of London\Desktop\Year2\DAT5902\final_project\visualisations\ucas_ungrad.csv")
+# Show the plot
+plt.tight_layout()
+plt.show()
