@@ -1,27 +1,31 @@
 import unittest
-import pandas as pd
-from load_ucas_linegraph import create_line_graph
-from io import StringIO
+import io
+import matplotlib.pyplot as plt
+from unittest.mock import patch
+from load_ucas_linegraph import load_and_plot_ucas_data
 
-class TestLineGraph(unittest.TestCase):
+class TestLoadUCASLineGraph(unittest.TestCase):
 
-    def test_create_line_graph(self):
-        # Assuming your data is available in a CSV file
-        data_csv = """
-        Year,Ethnicity,Percentage
-        2020/01,Asian,20
-        2020/01,Black,15
-        2020/01,White,65
-        2021/01,Asian,25
-        2021/01,Black,18
-        2021/01,White,57
-        """
+    @patch("load_ucas_linegraph.plt.show", return_value=None)  # Mocking plt.show to prevent displaying the plot during tests
+    def test_create_line_graph(self, mock_show):
+        # Provide a test file path or mock the file loading if needed
+        file_path = r"C:\Users\krina\OneDrive - Queen Mary, University of London\Desktop\Year2\DAT5902\final_project\visualisations\ucas_ungrad.csv"
 
-        df = pd.read_csv(StringIO(data_csv))
-        create_line_graph(df)
+        # Use the Agg backend to capture the plot
+        plt.switch_backend('Agg')
 
-        # If the function runs without errors, the test passes
-        self.assertTrue(True)
+        # Call the function
+        load_and_plot_ucas_data(file_path)
+
+        # Get the plot as an image buffer
+        buffer = io.BytesIO()
+        plt.savefig(buffer, format='png')
+        buffer.seek(0)
+
+        # Check if the image buffer is not empty
+        self.assertTrue(buffer.readable())
+        buffer.close()
 
 if __name__ == '__main__':
     unittest.main()
+
