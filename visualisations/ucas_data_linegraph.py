@@ -16,7 +16,7 @@ fig, ax = plt.subplots(figsize=(12, 8))
 # Iterate over unique ethnicities and plot a line for each
 for ethnicity in filtered_data['Ethnicity'].unique():
     ethnicity_data = filtered_data[filtered_data['Ethnicity'] == ethnicity]
-    ax.plot(ethnicity_data['Time'], ethnicity_data['Percentage'], label=ethnicity)
+    ax.plot(ethnicity_data['Time'], ethnicity_data['Percentage'], label=ethnicity, marker='o')
 
 # Customize the plot
 ax.set_title('Percentage of First-Year Enrolments by Ethnicity Over Time')
