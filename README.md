@@ -11,4 +11,4 @@ Project Contents:
 
 Note: All files are reproducible in VSCode, however xlsx & csv file paths must be altered according to where the files will be saved in your device.
 
-Note: CircleCI project code: e27d15de-42f4-492f-b67e-7b026e0df1a0
+Note: CircleCI project ID & link: e27d15de-42f4-492f-b67e-7b026e0df1a0    https://app.circleci.com/pipelines/github/krina-panchal/final_project
