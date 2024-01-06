@@ -1,4 +1,5 @@
 import unittest
+import pandas as pd
 from load_ucas_file_datatype import load_ucas_data, check_data_types
 
 class TestDataProcessing(unittest.TestCase):
